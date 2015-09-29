@@ -39,19 +39,19 @@ public class MainActivity extends Activity {
 	private void init() {
 		context = MainActivity.this;
 
-		btnStaSer = (Button) findViewById(R.id.button1);
-		btnStaSer.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent jmpLS = new Intent();
-				jmpLS.setAction("anti.anti.social.service.LocalService");
-				MainActivity.this.startService(jmpLS);
-				showToast("Open the lock screen", MainActivity.this);
-				//This is a test, the initial password
-			}
-		});
-
+//		btnStaSer = (Button) findViewById(R.id.button1);
+//		btnStaSer.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				Intent jmpLS = new Intent();
+//				jmpLS.setAction("anti.anti.social.service.LocalService");
+//				MainActivity.this.startService(jmpLS);
+//				showToast("Open the lock screen", MainActivity.this);
+//				//This is a test, the initial password
+//			}
+//		});
+//
 
 		btnAbout = (Button) findViewById(R.id.button3);
 		btnAbout.setOnClickListener(new OnClickListener() {

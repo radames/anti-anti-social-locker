@@ -110,7 +110,7 @@ public class ScreenLockActivity extends Activity {
                     break;
 
                 case SUCCESS:
-                    tvPsdReveal.setText("RIGH RANDOM NUMBER, UNLOCKING");
+                    tvPsdReveal.setText("CORRECT RANDOM NUMBER, UNLOCKING");
                     mHandler.postDelayed(successPass, delay);
                     break;
 
