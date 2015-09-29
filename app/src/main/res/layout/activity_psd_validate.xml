@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg_7"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp" >
+    
+    <TextView
+        android:id="@+id/tvTopInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter your unlock gesture, password verification" />
+
+    <TextView
+        android:id="@+id/tvPsdReveal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_orange_light"
+        android:layout_gravity="center"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <anti.anti.social.view.FlingRelativeLayout
+        android:id="@+id/flingRelativeLayout"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_256" >
+
+        <ImageView
+            android:id="@+id/ivOriginDragView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_lockscreen_handle_normal" />
+    </anti.anti.social.view.FlingRelativeLayout>
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+        
+	    <FrameLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1" >
+	    </FrameLayout>
+	    
+	    <Button
+	        android:id="@+id/btnClear"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/btnface1"
+	        android:text="Clear" />
+	    
+	    <FrameLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="7" >
+	    </FrameLayout>
+	
+	    <Button
+	        android:id="@+id/btnConfirm"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/btnface3"
+	        android:text="Confirm" />
+
+	    <FrameLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1" >
+	    </FrameLayout>
+	    
+    </LinearLayout>
+    
+</LinearLayout>

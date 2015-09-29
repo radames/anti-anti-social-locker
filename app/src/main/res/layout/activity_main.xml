@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp" >
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome lock screen software"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_weight="0.15" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp" >
+    </FrameLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="5dp" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btnface1"
+      	  	android:textColor="@android:color/white"
+            android:text="Start lock screen function" />
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btnface6"
+      	  	android:textColor="@android:color/white"
+            android:text="Set gesture password" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="5dp" >
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btnface5"
+            android:text="About"
+            android:textColor="@android:color/white" />
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btnface3"
+            android:text="go away"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+    
+</LinearLayout>

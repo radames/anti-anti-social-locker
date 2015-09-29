@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lock1_bg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="anti.anti.social.ScreenLockActivity" >
+
+    <anti.anti.social.view.FlingRelativeLayout
+        android:id="@+id/flingRelativeLayout"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_256" >
+
+        <ImageView
+            android:id="@+id/ivOriginDragView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_lockscreen_handle_normal" />
+    </anti.anti.social.view.FlingRelativeLayout>
+
+    <TextView
+        android:id="@+id/tvTopInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="请输入您的解锁手势" />
+
+    <TextView
+        android:id="@+id/tvPsdReveal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tvTopInfo"
+        android:textColor="@android:color/holo_orange_light"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/flingRelativeLayout"
+        android:gravity="center"
+        android:padding="5dp" >
+        
+	    <FrameLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1" >
+	    </FrameLayout>
+        
+	    <Button
+	        android:id="@+id/btnClear"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/btnface5"
+	        android:text="Clear" />
+	    
+	    <FrameLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="7" >
+	    </FrameLayout>
+	
+	    <Button
+	        android:id="@+id/btnConfirm"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/btnface3"
+	        android:text="Confirm" />
+        
+
+	    <FrameLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1" >
+	    </FrameLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
