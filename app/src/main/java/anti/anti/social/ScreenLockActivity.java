@@ -15,8 +15,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Random;
 
 public class ScreenLockActivity extends Activity {
 	private static final String TAG = "ScreenLockActivity";
@@ -31,8 +34,11 @@ public class ScreenLockActivity extends Activity {
 	
 	private Button btnConfirm, btnClear;
 	private TextView tvTopInfo, tvPsdReveal;
+	private NumberPicker passwdNum;
+
 	private FlingRelativeLayout flingRelativeLayout;
-	
+	private int randomPassNum;
+
 	private void showToast(String str, Context context) {
 		Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
 	}
@@ -42,6 +48,8 @@ public class ScreenLockActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		isShown = true;
 		instance = ScreenLockActivity.this;
+		randomPassNum = new Random().nextInt(10);
+		Log.e(TAG, "THIS IS THE PASS: " + randomPassNum );
 
 //		setContentView(R.layout.activity_screen_lock);
 		init();
@@ -64,7 +72,12 @@ public class ScreenLockActivity extends Activity {
 		btnClear = (Button) lockView.findViewById(R.id.btnClear);
 		tvTopInfo = (TextView) lockView.findViewById(R.id.tvTopInfo);
 		tvPsdReveal = (TextView) lockView.findViewById(R.id.tvPsdReveal);
-		
+		passwdNum = (NumberPicker) lockView.findViewById(R.id.passwdNum);
+		passwdNum.setMaxValue(9);
+		passwdNum.setMinValue(0);
+
+
+
 		tvPsdReveal.setText("");
 		
 		
@@ -73,7 +86,9 @@ public class ScreenLockActivity extends Activity {
 			//有密码的时候
 			btnConfirm.setVisibility(View.VISIBLE);
 			btnClear.setVisibility(View.VISIBLE);
-			tvTopInfo.setText("Please enter your password to unlock the device gesture：");
+			passwdNum.setVisibility(View.VISIBLE);
+
+			tvTopInfo.setText("Please Insert a Number between 0 and 9");
 			
 			flingRelativeLayout.setOnFlingCompleteListener(new OnFlingCompleteListener() {
 				
@@ -90,12 +105,19 @@ public class ScreenLockActivity extends Activity {
 				
 				@Override
 				public void onClick(View v) {
+					if(passwdNum.getValue() == randomPassNum){
+						showToast("Back, correct password", instance);
+						PasswordUtil.curPsd="";
+						tvPsdReveal.setText("");
+						lockLayer.unlock();
+						finish();
+					}
 					if (PasswordUtil.validatePsd(instance)) {
 						//密码输入正确
 						showToast("Enter the correct password, welcome back ~", instance);
 						PasswordUtil.curPsd="";//每次都是自动帮你去清空整个密码
 						tvPsdReveal.setText("");
-						
+
 						lockLayer.unlock();
 						finish();
 					} else {
@@ -122,6 +144,7 @@ public class ScreenLockActivity extends Activity {
 			//没有密码的时候
 			btnConfirm.setVisibility(View.INVISIBLE);
 			btnClear.setVisibility(View.INVISIBLE);
+			passwdNum.setVisibility(View.INVISIBLE);
 			tvTopInfo.setText("Swipe to unlock any direction~");
 			flingRelativeLayout.setOnFlingCompleteListener(new OnFlingCompleteListener() {
 				

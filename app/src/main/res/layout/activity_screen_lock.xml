@@ -88,5 +88,12 @@
 
     </LinearLayout>
 
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwdNum"
+        android:layout_below="@+id/tvPsdReveal"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
