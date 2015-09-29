@@ -1,7 +1,5 @@
 package anti.anti.social;
 
-import anti.anti.social.unlock.util.PasswordUtil;
-
 import android.app.Activity;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
@@ -19,7 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-	private static final String TAG = "MainActivity";
+	private static final String TAG = "AASOCIAL:LOCKER";
 
 	private Button btnStaSer;
 	private Button btnStaPsdSetting;
@@ -34,8 +32,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-
 
         init();
 	}
@@ -52,21 +48,10 @@ public class MainActivity extends Activity {
 				jmpLS.setAction("anti.anti.social.service.LocalService");
 				MainActivity.this.startService(jmpLS);
 				showToast("Open the lock screen", MainActivity.this);
-				PasswordUtil.setDefaultPsd(context);//这个是测试用，初始密码
 				//This is a test, the initial password
 			}
 		});
 
-		btnStaPsdSetting = (Button) findViewById(R.id.button2);
-		btnStaPsdSetting.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent jmpPS = new Intent(MainActivity.this, SetPsdActivity.class);
-				startActivity(jmpPS);
-				showToast("Gesture password here", MainActivity.this);
-			}
-		});
 
 		btnAbout = (Button) findViewById(R.id.button3);
 		btnAbout.setOnClickListener(new OnClickListener() {
@@ -93,7 +78,6 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				showToast("Bye", context);
 				finish();
-				PasswordUtil.curPsd = "";//还是处理一下
 			}
 		});
 
