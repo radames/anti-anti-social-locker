@@ -103,4 +103,32 @@ public class MainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	private void startSamplingService( int position ) {
+		stopSamplingService();
+		SensorItem item = (SensorItem)listAdapter.getItem( position );
+		Sensor sensor = item.getSensor();
+		String sensorName = sensor.getName();
+		Intent i = new Intent();
+		i.setClassName( "aexp.sensors","aexp.sensors.SamplingService" );
+		i.putExtra( "sensorname",sensorName );
+		startService( i );
+		samplingServiceRunning = true;
+		samplingServicePosition = position;
+		item.setSampling( true );
+		listAdapter.notifyDataSetChanged();
+	}
+
+	private void stopSamplingService() {
+		if( samplingServiceRunning ) {
+			Intent i = new Intent();
+			i.setClassName( "aexp.sensors","aexp.sensors.SamplingService" );
+			stopService( i );
+			SensorItem item = (SensorItem)listAdapter.getItem( samplingServicePosition );
+			item.setSampling( false );
+			samplingServiceRunning = false;
+			samplingServicePosition = -1;
+			listAdapter.notifyDataSetChanged();
+		}
+	}
+
 }
