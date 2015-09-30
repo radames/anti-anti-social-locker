@@ -32,7 +32,7 @@ public class ScreenLockActivity extends Activity {
     private final long delay = 1500l;
 
     private Button btnConfirm;
-    private TextView tvTopInfo, tvPsdReveal;
+    private TextView tvPsdReveal;
     private NumberPicker passwdNum;
 
     private int randomPassNum;
@@ -66,7 +66,6 @@ public class ScreenLockActivity extends Activity {
 
         //Init Views
         btnConfirm = (Button) lockView.findViewById(R.id.btnConfirm);
-        tvTopInfo = (TextView) lockView.findViewById(R.id.tvTopInfo);
         tvPsdReveal = (TextView) lockView.findViewById(R.id.tvPsdReveal);
         passwdNum = (NumberPicker) lockView.findViewById(R.id.passwdNum);
         passwdNum.setMaxValue(10);
@@ -80,7 +79,6 @@ public class ScreenLockActivity extends Activity {
         btnConfirm.setVisibility(View.VISIBLE);
         passwdNum.setVisibility(View.VISIBLE);
 
-        tvTopInfo.setText("To Unlock Please Insert a Number between 0 and 10");
 
         btnConfirm.setOnClickListener(new OnClickListener() {
 

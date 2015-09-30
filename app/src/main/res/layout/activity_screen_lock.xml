@@ -13,17 +13,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/tvPsdReveal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tvTopInfo"
+            android:textColor="@android:color/holo_red_dark"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_gravity="center_horizontal|top"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:background="#fbff00" />
+
         <Button
             android:id="@+id/btnConfirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btnface3"
+            android:background="@android:drawable/btn_default"
             android:text="Confirm"
             android:layout_below="@+id/passwdNum"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="85dp"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textSize="20dp" />
+            android:layout_gravity="right|bottom"
+            android:textSize="20dp"
+            android:theme="@android:style/Widget.DeviceDefault.Light.Button"
+            android:textColor="#000000" />
 
         <NumberPicker
             android:layout_width="wrap_content"
@@ -31,38 +46,8 @@
             android:id="@+id/passwdNum"
             android:layout_below="@+id/tvPsdReveal"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center" />
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|top">
-
-            <TextView
-                android:id="@+id/tvTopInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:text="To unlock Insert number between 0 and 10"
-                android:layout_gravity="center_horizontal"
-                android:textSize="25dp"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/tvPsdReveal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/tvTopInfo"
-                android:textColor="@android:color/holo_orange_light"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_gravity="center_horizontal|top"
-                android:textSize="30dp"
-                android:gravity="center" />
-
-        </LinearLayout>
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="#96000000" />
     </FrameLayout>
 
 
